@@ -1,0 +1,127 @@
+
+<!--
+    https://www.linkedin.com/posts/samuel-siebler_visualdesign-ui-concept-activity-6969566063327862784-QSM4?utm_source=share&utm_medium=member_desktop 
+
+    https://unsplash.com/photos/H69EgivmCjE
+
+    https://unsplash.com/photos/yz3Lt5Kwdi8
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Yellow slider</title>
+        <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://kit.fontawesome.com/18b890055d.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+    </head>
+
+  <body>
+
+    
+    <div class="wrapper">
+        <div class="slider">
+            <div class="slider__card">
+                
+                <div class="slider__images" id="sliderEl">
+                    <div class="slider__image_container" data-active="active">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/dunes.jpg">
+                        </div>
+                    </div>
+                    <div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/columns.jpg">
+                        </div>
+                    </div>
+                    <!--<div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/person.jpg">
+                        </div>
+                    </div>-->
+                    <div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/modern_shades.jpg">
+                        </div>
+                    </div>
+                    <!--<div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/mountains.jpg">
+                        </div>
+                    </div>-->
+                    <div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/modern_waves.jpg">
+                        </div>
+                    </div>
+                    <div class="slider__image_container">
+                        <div class="image_wrapper">
+                            <img class="slider__image" src="images/skyscrapers.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__footer">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="side">
+        
+            <a class="credits_link" onclick="openCredits()">About</a>
+        
+            <div class="slider__things">
+                <h1 class="slider__title">Let it slide</h1>
+                <div class="slider__buttons_wrapper">
+                    <div class="slider__buttons">
+                        
+                        
+                        <btn id="restartBtn" class="disabled">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path d="M13.25 25.5c-6.065 0-11-4.935-11-11s4.935-11 11-11 11 4.935 11 11a1 1 0 1 1-2 0c0-4.963-4.037-9-9-9s-9 4.037-9 9 4.037 9 9 9a9.067 9.067 0 0 0 6.364-2.636.999.999 0 1 1 1.414 1.414A11.078 11.078 0 0 1 13.25 25.5z"/><path d="M21.161 12.335h4.177a.41.41 0 0 1 .353.621l-2.089 3.509a.41.41 0 0 1-.706 0l-2.089-3.509a.412.412 0 0 1 .354-.621z"/></svg>
+                        </btn>
+                        <btn id="prevBtn" class="disabled">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.891 17.418a.697.697 0 0 1 0 .979.68.68 0 0 1-.969 0l-7.83-7.908a.697.697 0 0 1 0-.979l7.83-7.908a.68.68 0 0 1 .969 0 .697.697 0 0 1 0 .979L6.75 10l7.141 7.418z"/></svg>
+                        </btn>
+                        <btn id="nextBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.25 10 6.109 2.58a.697.697 0 0 1 0-.979.68.68 0 0 1 .969 0l7.83 7.908a.697.697 0 0 1 0 .979l-7.83 7.908a.68.68 0 0 1-.969 0 .697.697 0 0 1 0-.979L13.25 10z"/></svg>
+                        </btn>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="credits_bg">
+        <div class="credits">
+            <p>created by <a href="https://www.gpuia.it" target="_blank">gpuia</a></p>
+            <p><br>inspired by <a href="https://www.linkedin.com/posts/samuel-siebler_visualdesign-ui-concept-activity-6969566063327862784-QSM4/?utm_source=share&utm_medium=member_desktop" target="_blank">this linkedin post</a></p>
+            <p><br><br>Icons from <a href="https://iconscout.com">IconScout</a></p>
+            <p>Images from <a href="https://unsplash.com/">Unsplash</a></p>
+            <div style="display:none;">
+                <p><br><br><a href="https://iconscout.com/icons/refresh" target="_blank">Refresh Icon</a> by <a href="https://iconscout.com/contributors/jemismali">Jemis Mali</a> on <a href="https://iconscout.com">IconScout</a></p>
+                <p><a href="https://iconscout.com/icon/chevron-25" target="_blank">Chevron Left Icon</a> by <a href="https://iconscout.com/contributors/daniel-bruce" target="_blank">Daniel Bruce</a> on <a href="https://iconscout.com">IconScout</p>
+                <p><a href="https://iconscout.com/icon/chevron-27" target="_blank">Chevron Right Icon</a> by <a href="https://iconscout.com/contributors/daniel-bruce" target="_blank">Daniel Bruce</a> on <a href="https://iconscout.com">IconScout</p>
+                <p><a href="https://iconscout.com/icons/close" target="_blank">Close Icon</a> by <a href="https://iconscout.com/contributors/unicons">Unicons Font</a> on <a href="https://iconscout.com">IconScout</a></p>
+            </div>
+            <a class="credits__close_btn" onclick="closeCredits()"></a>
+        </div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-small"></div>
+  
+    
+    <script src="main.js"></script>
+
+  </body>
+
+</html>

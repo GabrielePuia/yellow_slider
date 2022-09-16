@@ -1,0 +1,26 @@
+// Breakpoints + responsive mixin
+$xs: 400px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$xxxl: 1600px;
+
+@mixin min-screen($resolution) {
+    @media screen and (min-width: $resolution) {
+        @content;
+    }
+}
+
+@mixin max-screen($resolution) {
+    @media screen and (max-width: ($resolution) - 1) {
+        @content;
+    }
+}
+
+
+@mixin setDimensions($width, $height) {
+    width: $width;
+    height: $height;
+  }
