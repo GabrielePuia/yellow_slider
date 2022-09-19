@@ -4,16 +4,24 @@ var slider, sliderWidth, sliderImages;
 var cursor = document.querySelector('.cursor'), cursorSmall = document.querySelector('.cursor-small');
 var as = document.querySelectorAll('a');
 var btns = document.querySelectorAll('btn');
-var creditsWrapper, restartBtn, prevBtn, nextBtn, tl = gsap.timeline(), nenxtTl = gsap.timeline(), prevTl = gsap.timeline()
+var creditsWrapper, restartBtn, prevBtn, nextBtn, introTl = gsap.timeline(), creditsTl = gsap.timeline(), nenxtTl = gsap.timeline(), prevTl = gsap.timeline()
     defaultEase = "power2.outIn", creditsBgDuration = 0.2, creditsDuration = 0.4;
+var titleHeight = 42;
+
+//Intro functions
+
+function startIntroAnimations() {
+    introTl.fromTo('h1.slider__title', {x: 200, duration: 1}, {/*height: titleHeight, */x: 0, opacity: 1, duration: 1})
+    .to("html", {"--sliderCoverHeight": "0", duration: 1.2, delay: 0.4, ease: defaultEase});
+}
 
 //Credits functions
 function openCredits() {
-    tl.to('#credits_bg', {display: "flex", opacity: 1, duration: creditsBgDuration, ease: defaultEase})
+    creditsTl.to('#credits_bg', {display: "flex", opacity: 1, duration: creditsBgDuration, ease: defaultEase})
     .fromTo('#credits_bg .credits', {y: 20, duration: creditsDuration, ease: defaultEase}, {y: 0, opacity: 1, ease: defaultEase});
 }
 function closeCredits() {
-    tl.to('#credits_bg .credits', {y: 20, opacity: 0, duration: creditsDuration, ease: defaultEase})
+    creditsTl.to('#credits_bg .credits', {y: 20, opacity: 0, duration: creditsDuration, ease: defaultEase})
     .to('#credits_bg', {display: "none", opacity: 0, duration: creditsBgDuration, delay: 0.3, ease: defaultEase}, "<");
 }
 
@@ -247,6 +255,8 @@ window.onload = (event) => {
     restartBtn = document.getElementById("restartBtn");
     prevBtn = document.getElementById("prevBtn");
     nextBtn = document.getElementById("nextBtn");
+
+    startIntroAnimations();
 
     creditsWrapper.addEventListener("click", function(e){
         if (e.target === this) {

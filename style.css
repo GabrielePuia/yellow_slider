@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+html {
+  --sliderCoverHeight: 80%;
+}
+
 a {
   color: #333333;
   text-decoration: underline;
@@ -21,6 +25,7 @@ body {
   align-items: center;
   user-select: none;
   cursor: none !important;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -68,6 +73,16 @@ body {
   -moz-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
   -o-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
   box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
+  position: relative;
+}
+.slider__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--sliderCoverHeight);
+  background-color: #333333;
 }
 .slider__card .slider__images {
   width: 100%;
@@ -148,14 +163,18 @@ body {
 }
 .side .slider__title {
   font-size: 42px;
+  height: 42px;
+  opacity: 0;
   font-weight: 500;
   margin-bottom: 60px;
   font-family: "Bebas Neue", cursive;
+  overflow: hidden;
 }
 @media screen and (max-width: 991px) {
   .side .slider__title {
     margin: 20px 0 10px;
     font-size: 32px;
+    height: 32px;
   }
 }
 @media screen and (max-width: 767px) {
