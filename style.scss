@@ -2,7 +2,8 @@
 
 //CSS VARIABLES FOR GSAP
 html {
-  --sliderCoverHeight: 80%;
+  --sliderCoverHeight: 81%;
+  --sliderCoverBorderColor: rgb(186 103 17 / 60%);
 }
 
 $bg_color: #ffa825;
@@ -88,13 +89,15 @@ body {
       left: 0;
       width: 100%;
       height: var(--sliderCoverHeight);
-      background-color: #333333;
+      background-color: $bg_color;
+      border-bottom: solid 1px var(--sliderCoverBorderColor);
     }
     .slider__images {
       width: 100%;
       max-height: 80%;
       display: flex;
       will-change: transform;
+      opacity: 0;
       .slider__image_container {
         display: flex;
         width: 100%;
@@ -127,18 +130,30 @@ body {
       }
     }
     .card__footer {
-      padding: 20px 80px;
-      display: flex;
-      justify-content: space-between;
+      padding: 40px 80px;
       @include max-screen($lg) {
         padding: 10px 30px;
       }
-      p {
-        font-size: 14px;
-        font-weight: 500;
-        &:last-child {
-          @include max-screen($lg) {
-            display: none;
+      .captions_list {
+        position: relative;
+        opacity: 0;
+        .caption {
+          position: absolute;
+          display: flex;
+          gap: 80px;
+          &:not(:first-child) {
+            p {
+              opacity: 0;
+            }
+          }
+          p {
+            font-size: 14px;
+            font-weight: 500;
+            &:last-child {
+              @include max-screen($lg) {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -202,6 +217,7 @@ body {
       padding: 20px 30px;
       display: flex;
       align-items: center;
+      gap: 20px;
       border-radius: 30px;
       -webkit-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
       -moz-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
@@ -211,7 +227,6 @@ body {
         border-radius: 25px;
       }
       btn {
-        margin-left: 20px;
         display: flex;
         align-items: center;
         &:hover {
@@ -219,10 +234,6 @@ body {
           svg {
             fill: $grey_dark;
           }
-        }
-        &:first-of-type {
-          margin-left: 0;
-          margin-right: 30px;
         }
         &.disabled {
           svg {
@@ -286,8 +297,7 @@ body {
 }
 
 
-  
-  
+
 .cursor {
   position: fixed;
   top: 0;
@@ -300,7 +310,7 @@ body {
   border-radius: 50%;
   background-color: rgba($color: $grey, $alpha: 0.6);
   transform-origin: center;
-  transition: transform .3s ease-out, width .2s, height .2s, opacity .2s;
+  transition: transform .2s ease-out, width .2s, height .2s, opacity .2s;
   pointer-events: none;
 }
 .cursor-small {
@@ -316,7 +326,7 @@ body {
   background-color: rgba($color: $grey, $alpha: 0.6);
   background-color: $grey;
   transform-origin: center;
-  transition: transform .1s ease-out, width .2s, height .2s, opacity .2s;
+  transition: transform .05s ease-out, width .2s, height .2s, opacity .2s;
   pointer-events: none;
 }
 body:hover .cursor, body:hover .cursor-small {
@@ -327,8 +337,8 @@ body:hover .cursor.click {
   height: 12px;
 }
 body:hover .cursor.hover {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   opacity: 1;
 }
 body:hover .cursor.hover.click {

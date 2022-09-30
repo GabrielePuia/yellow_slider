@@ -15,7 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Yellow slider</title>
         <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.min.css">
         
         <script src="https://kit.fontawesome.com/18b890055d.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
@@ -50,11 +50,6 @@
                             <img class="slider__image" src="images/modern_shades.jpg">
                         </div>
                     </div>
-                    <!--<div class="slider__image_container">
-                        <div class="image_wrapper">
-                            <img class="slider__image" src="images/mountains.jpg">
-                        </div>
-                    </div>-->
                     <div class="slider__image_container">
                         <div class="image_wrapper">
                             <img class="slider__image" src="images/modern_waves.jpg">
@@ -68,8 +63,29 @@
                 </div>
 
                 <div class="card__footer">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    <div class="captions_list">
+                        <div class="caption"  data-active="active">
+                            <p class="caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="caption__text--two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="caption">
+                            <p class="caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="caption__text--two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="caption">
+                            <p class="caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="caption__text--two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="caption">
+                            <p class="caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="caption__text--two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="caption">
+                            <p class="caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="caption__text--two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
                 </div>
 
             </div>
@@ -84,9 +100,9 @@
                     <div class="slider__buttons">
                         
                         
-                        <btn id="restartBtn" class="disabled">
+                        <!--<btn id="restartBtn" class="disabled">
                             <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path d="M13.25 25.5c-6.065 0-11-4.935-11-11s4.935-11 11-11 11 4.935 11 11a1 1 0 1 1-2 0c0-4.963-4.037-9-9-9s-9 4.037-9 9 4.037 9 9 9a9.067 9.067 0 0 0 6.364-2.636.999.999 0 1 1 1.414 1.414A11.078 11.078 0 0 1 13.25 25.5z"/><path d="M21.161 12.335h4.177a.41.41 0 0 1 .353.621l-2.089 3.509a.41.41 0 0 1-.706 0l-2.089-3.509a.412.412 0 0 1 .354-.621z"/></svg>
-                        </btn>
+                        </btn>-->
                         <btn id="prevBtn" class="disabled">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.891 17.418a.697.697 0 0 1 0 .979.68.68 0 0 1-.969 0l-7.83-7.908a.697.697 0 0 1 0-.979l7.83-7.908a.68.68 0 0 1 .969 0 .697.697 0 0 1 0 .979L6.75 10l7.141 7.418z"/></svg>
                         </btn>
