@@ -166,7 +166,7 @@ body {
             font-weight: 500;
             margin-top: 0;       
             @include max-screen($lg) {
-              margin-bottom: 0;     
+              margin: 0;     
             } 
             &:last-child {
               @include max-screen($lg) {
