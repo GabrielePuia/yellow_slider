@@ -76,7 +76,7 @@ body {
   }
   @include max-screen($sm) {
     width: 90%;
-    height: 70%;
+    height: 75%;
     margin: 0 auto;
   }
   &__card {
@@ -143,6 +143,9 @@ body {
     .card__footer {
       padding: 0 80px;
       height: 100%;
+      @include max-screen($lg) {
+        padding: 40px 30px;
+      }
       .captions_list {
         position: relative;
         height: 100%;
@@ -161,7 +164,10 @@ body {
           p {
             font-size: 14px;
             font-weight: 500;
-            margin-top: 0;        
+            margin-top: 0;       
+            @include max-screen($lg) {
+              margin-bottom: 0;     
+            } 
             &:last-child {
               @include max-screen($lg) {
                 display: none;
@@ -206,12 +212,15 @@ body {
       font-family: 'Bebas Neue', cursive;
       overflow: hidden;
       @include max-screen($lg) {
-        margin: 20px 0 10px;
+        margin: 0 0 40px 0;
         font-size: 32px;
         height: 32px;
       }
       @include max-screen($md) {
-        margin: 20px 0;
+        margin-bottom: 30px;
+      }
+      @include max-screen($sm) {
+        margin-bottom: 20px;
       }
     }
     &__buttons_wrapper {
