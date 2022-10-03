@@ -1,5 +1,13 @@
 console.log("made by gpuia");
 
+var $xs = 425;
+var $sm = 576;
+var $md = 768;
+var $lg = 992;
+var $xl = 1200;
+var $xxl = 1400;
+var $xxxl = 1600;
+
 var slider, sliderWidth, sliderImages;
 var cursor = document.querySelector('.cursor'), cursorSmall = document.querySelector('.cursor-small');
 var as = document.querySelectorAll('a');
@@ -33,47 +41,49 @@ function closeCredits() {
 
 
 //Custom cursor functions
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorSmall.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-});
-//Click
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-});
 
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-});
+if(window.innerWidth >= $lg) {
+    document.addEventListener('mousemove', function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    cursorSmall.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+    cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+    });
+    //Click
+    document.addEventListener('mousedown', function(){
+    cursor.classList.add('click');
+    });
 
-//Hover effect
-as.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        cursor.classList.add('hover');
-        cursorSmall.classList.add('hover');
+    document.addEventListener('mouseup', function(){
+    cursor.classList.remove('click')
     });
-    item.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorSmall.classList.remove('hover');
-    });
-})
-btns.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        if(!item.classList.contains("disabled")) {
+
+    //Hover effect
+    as.forEach(item => {
+        item.addEventListener('mouseover', () => {
             cursor.classList.add('hover');
             cursorSmall.classList.add('hover');
-        }
-    });
-    item.addEventListener('mouseleave', () => {
-        if(!item.classList.contains("disabled")) {
+        });
+        item.addEventListener('mouseleave', () => {
             cursor.classList.remove('hover');
             cursorSmall.classList.remove('hover');
-        }
-    });
-})
-
+        });
+    })
+    btns.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            if(!item.classList.contains("disabled")) {
+                cursor.classList.add('hover');
+                cursorSmall.classList.add('hover');
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            if(!item.classList.contains("disabled")) {
+                cursor.classList.remove('hover');
+                cursorSmall.classList.remove('hover');
+            }
+        });
+    })
+}
 //Slider functions
 async function getActiveSlide() {
     let currentActiveSlide;

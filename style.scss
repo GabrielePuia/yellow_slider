@@ -17,12 +17,14 @@ $grey_dark: #000000;
 //@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
 
 a {
-  //cursor: pointer;
+  cursor: pointer;
   color: $grey;
   text-decoration: underline;
   outline: none !important;
   background-color: transparent !important;
-  cursor: none !important;
+  @include min-screen($lg) {
+    cursor: none !important;
+  }
 }
 body {
   background: $bg_color;
@@ -38,8 +40,10 @@ body {
   justify-content: center;
   align-items: center;
   user-select:none;
-  cursor: none !important;
   overflow: hidden;
+  @include min-screen($lg) {
+    cursor: none !important;
+  }
 }
 .wrapper {
   width: 90vw;
@@ -53,7 +57,7 @@ body {
   }*/
   @include max-screen($lg) {
     flex-direction: column;
-    height: 90vh;
+    height: 85vh;
   }
 }
 .slider {
@@ -70,11 +74,18 @@ body {
     height: 80%;
     margin: 0 auto;
   }
+  @include max-screen($sm) {
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+  }
   &__card {
     width: 100%;
     height: 100%;
     border-radius: 5%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     
     -webkit-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
     -moz-box-shadow: 5px 5px 25px 0 rgba(186, 103, 17, 0.8);
@@ -130,17 +141,18 @@ body {
       }
     }
     .card__footer {
-      padding: 40px 80px;
-      @include max-screen($lg) {
-        padding: 10px 30px;
-      }
+      padding: 0 80px;
+      height: 100%;
       .captions_list {
         position: relative;
+        height: 100%;
         opacity: 0;
         .caption {
           position: absolute;
           display: flex;
           gap: 80px;
+          top: 50%;
+          transform: translateY(-50%);
           &:not(:first-child) {
             p {
               opacity: 0;
@@ -149,6 +161,7 @@ body {
           p {
             font-size: 14px;
             font-weight: 500;
+            margin-top: 0;        
             &:last-child {
               @include max-screen($lg) {
                 display: none;
@@ -298,53 +311,55 @@ body {
 
 
 
-.cursor {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 15px;
-  height: 15px;
-  opacity: 0;
-  border-radius: 50%;
-  background-color: rgba($color: $grey, $alpha: 0.6);
-  transform-origin: center;
-  transition: transform .2s ease-out, width .2s, height .2s, opacity .2s;
-  pointer-events: none;
-}
-.cursor-small {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 5px;
-  height: 5px;
-  opacity: 0;
-  border-radius: 50%;
-  background-color: rgba($color: $grey, $alpha: 0.6);
-  background-color: $grey;
-  transform-origin: center;
-  transition: transform .05s ease-out, width .2s, height .2s, opacity .2s;
-  pointer-events: none;
-}
-body:hover .cursor, body:hover .cursor-small {
-  opacity: 0.8;
-}
-body:hover .cursor.click {
-  width: 12px;
-  height: 12px;
-}
-body:hover .cursor.hover {
-  width: 24px;
-  height: 24px;
-  opacity: 1;
-}
-body:hover .cursor.hover.click {
-  width: 17px;
-  height: 17px;
-}
-body:hover .cursor-small.hover {
-  opacity: 0;
+@include min-screen($lg) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba($color: $grey, $alpha: 0.6);
+    transform-origin: center;
+    transition: transform .2s ease-out, width .2s, height .2s, opacity .2s;
+    pointer-events: none;
+  }
+  .cursor-small {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba($color: $grey, $alpha: 0.6);
+    background-color: $grey;
+    transform-origin: center;
+    transition: transform .05s ease-out, width .2s, height .2s, opacity .2s;
+    pointer-events: none;
+  }
+  body:hover .cursor, body:hover .cursor-small {
+    opacity: 0.8;
+  }
+  body:hover .cursor.click {
+    width: 12px;
+    height: 12px;
+  }
+  body:hover .cursor.hover {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+  }
+  body:hover .cursor.hover.click {
+    width: 17px;
+    height: 17px;
+  }
+  body:hover .cursor-small.hover {
+    opacity: 0;
+  }
 }
